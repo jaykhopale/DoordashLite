@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/store_row_height"
+    android:background="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/store_logo"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:layout_margin="12dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/store_desc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/store_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/store_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/store_name"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/store_cuisine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/store_logo"
+        app:layout_constraintTop_toTopOf="@id/store_logo"
+        tools:text="McDonald's" />
+
+    <TextView
+        android:id="@+id/store_cuisine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/store_name"
+        app:layout_constraintEnd_toStartOf="@id/store_status"
+        app:layout_constraintTop_toBottomOf="@id/store_name"
+        app:layout_constraintBottom_toBottomOf="@id/store_logo"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="12sp"
+        android:textColor="@color/store_cuisine"
+        tools:text="Fried Chicken, Fast Food"/>
+
+    <TextView
+        android:id="@+id/store_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/store_logo"
+        android:layout_marginEnd="12dp"
+        android:maxLines="1"
+        android:textSize="12sp"
+        android:textColor="@color/store_eta"
+        tools:text="22 min"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

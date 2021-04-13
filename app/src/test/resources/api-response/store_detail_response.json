@@ -1,0 +1,215 @@
+{
+  "phone_number": "+16508582878",
+  "yelp_review_count": 0,
+  "is_consumer_subscription_eligible": true,
+  "offers_delivery": true,
+  "max_order_size": null,
+  "delivery_fee": 0,
+  "max_composite_score": 10,
+  "provides_external_courier_tracking": false,
+  "id": 52948,
+  "average_rating": 4.8,
+  "tags": [
+    "Hawaiian",
+    "Chicken",
+    "Comfort Food",
+    "Salads",
+    "Fast Food",
+    "Barbeque",
+    "Asian",
+    "Pickup",
+    "Sandwich",
+    "Takeout",
+    "Breakfast",
+    "Family Meals",
+    "Catering"
+  ],
+  "delivery_radius": 7607,
+  "inflation_rate": 0,
+  "menus": [
+    {
+      "status": "Available now",
+      "menu_version": 1,
+      "subtitle": "All Day",
+      "name": "L&L Hawaiian BBQ (All Day) (El Camino Real ) 16.12.2019 WF",
+      "open_hours": [
+        [
+          {
+            "hour": 8,
+            "minute": 0
+          },
+          {
+            "hour": 2,
+            "minute": 15
+          }
+        ],
+        [
+          {
+            "hour": 8,
+            "minute": 0
+          },
+          {
+            "hour": 2,
+            "minute": 15
+          }
+        ],
+        [
+          {
+            "hour": 8,
+            "minute": 0
+          },
+          {
+            "hour": 2,
+            "minute": 15
+          }
+        ],
+        [
+          {
+            "hour": 8,
+            "minute": 0
+          },
+          {
+            "hour": 2,
+            "minute": 15
+          }
+        ],
+        [
+          {
+            "hour": 8,
+            "minute": 0
+          },
+          {
+            "hour": 2,
+            "minute": 15
+          }
+        ],
+        [
+          {
+            "hour": 8,
+            "minute": 0
+          },
+          {
+            "hour": 2,
+            "minute": 15
+          }
+        ],
+        [
+          {
+            "hour": 8,
+            "minute": 0
+          },
+          {
+            "hour": 2,
+            "minute": 15
+          },
+          {
+            "hour": 8,
+            "minute": 0
+          },
+          {
+            "hour": 2,
+            "minute": 15
+          }
+        ]
+      ],
+      "is_business_enabled": false,
+      "is_catering": false,
+      "id": 1169514,
+      "status_type": "open"
+    }
+  ],
+  "show_store_menu_header_photo": false,
+  "composite_score": 10,
+  "fulfills_own_deliveries": false,
+  "offers_pickup": true,
+  "number_of_ratings": 990,
+  "status_type": "open",
+  "is_only_catering": false,
+  "status": "28 - 38 mins",
+  "delivery_fee_details": {
+    "final_fee": {
+      "display_string": "$0.00",
+      "unit_amount": 0
+    },
+    "discount": {
+      "description": "",
+      "source_type": "first_delivery",
+      "text": "Try Free Delivery",
+      "discount_type": "try_free",
+      "amount": {
+        "currency": "USD",
+        "display_string": "$1.99",
+        "unit_amount": 199
+      },
+      "min_subtotal": {
+        "currency": "USD",
+        "display_string": "$0.00",
+        "unit_amount": 0
+      }
+    },
+    "surge_fee": {
+      "display_string": "$0.00",
+      "unit_amount": 0
+    },
+    "original_fee": {
+      "display_string": "$1.99",
+      "unit_amount": 199
+    }
+  },
+  "object_type": "restaurant.restaurant",
+  "description": "L&L Hawaiian Barbecue",
+  "business": {
+    "business_vertical": null,
+    "id": 3434,
+    "name": "L&L Hawaiian Barbecue"
+  },
+  "yelp_biz_id": "",
+  "asap_time": 33,
+  "should_show_store_logo": true,
+  "yelp_rating": 0,
+  "extra_sos_delivery_fee": 0,
+  "business_id": 3434,
+  "special_instructions_max_length": null,
+  "cover_img_url": "https://cdn.doordash.com/media/restaurant/cover/LLHawaiianBBQ_5752105_Las_Vegas_NV.png",
+  "address": {
+    "city": "Palo Alto",
+    "subpremise": "",
+    "id": 1640462,
+    "printable_address": "3890 El Camino Real, Palo Alto, CA 94306, USA",
+    "state": "CA",
+    "street": "3898 El Camino Real",
+    "country": "United States",
+    "lat": 37.416464,
+    "lng": -122.1302555,
+    "shortname": "3890 El Camino Real",
+    "zip_code": "94306"
+  },
+  "price_range": 1,
+  "slug": "l-l-hawaiian-barbecue-palo-alto",
+  "show_suggested_items": true,
+  "name": "L&L Hawaiian BBQ (El Camino Real)",
+  "is_newly_added": false,
+  "is_good_for_group_orders": true,
+  "service_rate": 11,
+  "merchant_promotions": [
+    {
+      "minimum_subtotal_monetary_fields": {
+        "currency": "USD",
+        "display_string": "$0.00",
+        "unit_amount": null,
+        "decimal_places": 2
+      },
+      "delivery_fee": 0,
+      "delivery_fee_monetary_fields": {
+        "currency": "USD",
+        "display_string": "$0.00",
+        "unit_amount": 0,
+        "decimal_places": 2
+      },
+      "minimum_subtotal": null,
+      "new_store_customers_only": true,
+      "id": 0
+    }
+  ],
+  "header_image_url": null
+}

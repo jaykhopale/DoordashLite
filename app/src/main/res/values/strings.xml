@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DoordashLite</string>
+    <string name="error_message">Something went wrong. Please try again.</string>
+    <string name="store_desc">Logo of the store</string>
+    <string name="ratings_placeholder">%1$s (%2$d ratings)</string>
+    <string name="delivery_fee">delivery fee</string>
+    <string name="delivery_time">delivery time</string>
+
+</resources>

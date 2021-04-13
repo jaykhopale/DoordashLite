@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stores_graph"
+    app:startDestination="@id/storesFragment">
+
+    <fragment
+        android:id="@+id/storesFragment"
+        android:name="com.jayantkhopale.doordash.lite.ui.stores.StoresFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/stores_fragment" >
+        <action
+            android:id="@+id/action_storesFragment_to_storeDetailFragment"
+            app:destination="@id/storeDetailFragment"
+            app:popUpTo="@id/storesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeDetailFragment"
+        android:name="com.jayantkhopale.doordash.lite.ui.storedetail.StoreDetailFragment"
+        android:label="@string/app_name">
+        <argument
+            android:name="storeId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+</navigation>
