@@ -39,6 +39,7 @@ class StoresAdapter(private val clickListener: (Store) -> Unit) :
 
             Glide.with(itemStoreBinding.storeLogo)
                 .load(store.coverImgUrl)
+                .placeholder(R.drawable.ic_baseline_store_24)
                 .transform(
                     CenterInside(),
                     RoundedCorners(

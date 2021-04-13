@@ -44,17 +44,20 @@ class StoreDetailFragment : Fragment(R.layout.store_detail_fragment) {
                     binding.progressBar.visibility = View.GONE
                     val storeDetail = detailResult.storeDetail
                     Glide.with(this)
-                            .load(storeDetail.coverImgUrl)
-                            .transform(
-                                    CenterInside(),
-                            ).into(binding.storeCover)
+                        .load(storeDetail.coverImgUrl)
+                        .placeholder(R.drawable.ic_baseline_store_24)
+                        .transform(
+                            CenterInside(),
+                        ).into(binding.storeCover)
                     binding.deliveryFee.text = storeDetail.deliveryFeeDetails.finalFee.displayString
                     binding.deliveryStatus.text = storeDetail.status
                     binding.storeName.text = storeDetail.name
                     binding.storeRating.rating = storeDetail.averageRating.toFloat()
                     binding.storeTags.text = storeDetail.tags.joinToString()
-                    binding.ratingCount.text = getString(R.string.ratings_placeholder,
-                            storeDetail.averageRating.toString(), storeDetail.numberOfRatings)
+                    binding.ratingCount.text = getString(
+                        R.string.ratings_placeholder,
+                        storeDetail.averageRating.toString(), storeDetail.numberOfRatings
+                    )
 
                     binding.storeRating.visibility = View.VISIBLE
                     binding.feeDisplay.visibility = View.VISIBLE
