@@ -19,7 +19,11 @@ class StoresRepository @Inject constructor(
 ) {
 
     fun getStores(retries: Int = 3) = flow {
-        emit(storesService.getStoresByLatLong())
+        val stores = storesService.getStoresByLatLong()
+        if (stores.stores.isEmpty()) {
+            throw Exception("Successful response cannot be empty")
+        }
+        emit(stores)
     }.flowOn(ioDispatcher)
         .retryWhen { cause, attempt ->
             cause is Exception && attempt < retries
