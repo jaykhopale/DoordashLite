@@ -12,7 +12,8 @@ import com.jayantkhopale.doordash.lite.R
 import com.jayantkhopale.doordash.lite.data.stores.Store
 import com.jayantkhopale.doordash.lite.databinding.ItemStoreBinding
 
-class StoresAdapter(private val clickListener: (Store) -> Unit) :
+class StoresAdapter(private val clickListener: (Store) -> Unit,
+                    private val favoriteListener: (Store) -> Unit, var likedStores: Set<String> = setOf()) :
     ListAdapter<Store, StoresAdapter.StoreViewHolder>(storeDiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoreViewHolder {
@@ -35,6 +36,26 @@ class StoresAdapter(private val clickListener: (Store) -> Unit) :
             itemStoreBinding.storeStatus.text = store.deliveryTime
             itemStoreBinding.root.setOnClickListener {
                 clickListener(store)
+            }
+
+            if (likedStores.contains(store.id.toString())) {
+                store.isFavorite = true
+                itemStoreBinding.storeFav.setImageResource(R.drawable.ic_baseline_favorite_24)
+            } else {
+                store.isFavorite = false
+                itemStoreBinding.storeFav.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+            }
+
+            itemStoreBinding.storeFav.setOnClickListener {
+                if (store.isFavorite) {
+                    store.isFavorite = false
+                    itemStoreBinding.storeFav.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+                } else {
+                    store.isFavorite = true
+                    itemStoreBinding.storeFav.setImageResource(R.drawable.ic_baseline_favorite_24)
+                }
+
+                favoriteListener(store.copy())
             }
 
             Glide.with(itemStoreBinding.storeLogo)

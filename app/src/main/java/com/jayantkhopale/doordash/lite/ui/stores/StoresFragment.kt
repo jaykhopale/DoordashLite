@@ -25,9 +25,11 @@ class StoresFragment : Fragment(R.layout.stores_fragment) {
         super.onViewCreated(view, savedInstanceState)
         val binding = StoresFragmentBinding.bind(view)
 
-        val storesAdapter = StoresAdapter() { store: Store ->
+        val storesAdapter = StoresAdapter({ store: Store ->
             storeClicked(store.id)
-        }
+        }, { store: Store ->
+            storeLiked(store)
+        })
 
         storesAdapter.stateRestorationPolicy = RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
         val storesLayoutManager = LinearLayoutManager(requireContext()).apply {
@@ -52,6 +54,8 @@ class StoresFragment : Fragment(R.layout.stores_fragment) {
                 }
                 is StoresResult.Success -> {
                     binding.progressBar.visibility = View.GONE
+                    val likedStores = storesViewModel.getLikedStores(requireContext())
+                    storesAdapter.likedStores = likedStores
                     storesAdapter.submitList(result.stores)
                     Log.e("StoresFragment", "Results size is: ${result.stores.size}")
                 }
@@ -62,5 +66,9 @@ class StoresFragment : Fragment(R.layout.stores_fragment) {
     private fun storeClicked(id: Int) {
         val action = StoresFragmentDirections.actionStoresFragmentToStoreDetailFragment(id)
         findNavController().navigate(action)
+    }
+
+    private fun storeLiked(store: Store) {
+        storesViewModel.saveStore(store, requireContext())
     }
 }

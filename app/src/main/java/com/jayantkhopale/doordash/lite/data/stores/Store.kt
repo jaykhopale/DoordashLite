@@ -68,4 +68,6 @@ data class Store(
                 .asapMinutesRange.first().toString() + " min"
     }
 
+    var isFavorite: Boolean = false
+
 }

@@ -1,9 +1,11 @@
 package com.jayantkhopale.doordash.lite.ui
 
+import android.content.Context
 import androidx.lifecycle.*
 import com.jayantkhopale.doordash.lite.api.StoreDetailResult
 import com.jayantkhopale.doordash.lite.api.StoresRepository
 import com.jayantkhopale.doordash.lite.api.StoresResult
+import com.jayantkhopale.doordash.lite.data.stores.Store
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -57,5 +59,13 @@ class StoresViewModel @Inject constructor(
                 _storeDetailResult.postValue(StoreDetailResult.Failure(throwable))
             }
         }
+    }
+
+    fun saveStore(store: Store, context: Context) {
+        storesRepository.saveToLikedStores(store, context)
+    }
+
+    fun getLikedStores(context: Context): Set<String> {
+        return storesRepository.getLikedStores(context)
     }
 }

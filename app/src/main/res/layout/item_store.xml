@@ -59,4 +59,13 @@
         android:textColor="@color/store_eta"
         tools:text="22 min"/>
 
+    <ImageView
+        android:id="@+id/store_fav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/store_logo"
+        app:layout_constraintEnd_toStartOf="@id/store_status"
+        android:layout_marginEnd="12dp"
+        android:contentDescription="Favorite"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

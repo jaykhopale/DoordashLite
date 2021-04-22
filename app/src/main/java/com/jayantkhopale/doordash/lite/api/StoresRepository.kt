@@ -1,6 +1,10 @@
 package com.jayantkhopale.doordash.lite.api
 
+import android.content.Context
+import android.content.SharedPreferences
+import com.jayantkhopale.doordash.lite.data.stores.Store
 import com.jayantkhopale.doordash.lite.inject.IoDispatcher
+import com.squareup.moshi.Moshi
 import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.flow
@@ -35,4 +39,23 @@ class StoresRepository @Inject constructor(
         .retryWhen { cause, attempt ->
             cause is Exception && attempt < retries
         }
+
+    fun saveToLikedStores(store: Store, context: Context) {
+        val sharedPreferences = context.getSharedPreferences("FAVORITE_STORES", Context.MODE_PRIVATE)
+
+        val likedStores = sharedPreferences.getStringSet("FAVORITES", setOf())?.toMutableSet()
+        if (likedStores?.contains(store.id.toString()) == true) {
+            likedStores.remove(store.id.toString())
+        } else {
+            likedStores?.add(store.id.toString())
+        }
+        sharedPreferences.edit().putStringSet("FAVORITES", likedStores).apply()
+    }
+
+    fun getLikedStores(context: Context): Set<String> {
+        val sharedPreferences = context.getSharedPreferences("FAVORITE_STORES", Context.MODE_PRIVATE)
+        val likedStores = sharedPreferences.getStringSet("FAVORITES", setOf()) ?: setOf()
+        return likedStores
+    }
+
 }
